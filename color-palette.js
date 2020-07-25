@@ -36,7 +36,6 @@ inquirer
             message:
                 'Please enter the directory you would like the scss files in. e.g. ./src/styles'
         }
-        // Question to add user directory for files.
     ])
     .then(answers => {
         if (!fs.existsSync(answers.dir)) fs.mkdirSync(answers.dir)

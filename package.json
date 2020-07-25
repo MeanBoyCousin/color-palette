@@ -4,8 +4,29 @@
     "description": "A color palette designer built from a single primary color.",
     "main": "color-palette.js",
     "scripts": {
+        "lint": "npx eslint *.js --fix",
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "node color-palette.js"
+    },
+    "eslintConfig": {
+        "env": {
+            "commonjs": true,
+            "es2020": true,
+            "node": true,
+            "jest": true
+        },
+        "extends": [
+            "standard"
+        ],
+        "parserOptions": {
+            "ecmaVersion": 11
+        },
+        "rules": {
+            "indent": [
+                "error",
+                4
+            ]
+        }
     },
     "repository": {
         "type": "git",
@@ -29,5 +50,13 @@
         "dedent": "^0.7.0",
         "inquirer": "^7.3.3",
         "tinycolor2": "^1.4.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.5.0",
+        "eslint-config-standard": "^14.1.1",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.1"
     }
 }
