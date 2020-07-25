@@ -1,0 +1,40 @@
+$primary: rgb(98,0,238);
+$primary_hover: rgb(107, 15, 239);
+$primary_active: rgb(126, 46, 241);
+$primary_light: rgb(158,71,255);
+$primary_light_hover: rgb(164, 82, 255);
+$primary_light_active: rgb(175, 104, 255);
+$primary_dark: rgb(4,0,186);
+$primary_dark_hover: rgb(19, 15, 190);
+$primary_dark_active: rgb(49, 46, 198);
+$primary_text: rgb(255,255,255,1);
+
+// t ==> Triadic Color Harmony
+$secondary_t1: rgb(238,98,0);
+$secondary_t1_hover: rgb(224, 92, 0);
+$secondary_t1_active: rgb(195, 80, 0);
+$secondary_t1_light: rgb(255,147,61);
+$secondary_t1_light_hover: rgb(240, 138, 57);
+$secondary_t1_light_active: rgb(209, 121, 50);
+$secondary_t1_dark: rgb(180,49,0);
+$secondary_t1_dark_hover: rgb(169, 46, 0);
+$secondary_t1_dark_active: rgb(148, 40, 0);
+$secondary_t1_text: rgb(0,0,0,1);
+
+$secondary_t2: rgb(0,238,98);
+$secondary_t2_hover: rgb(0, 224, 92);
+$secondary_t2_active: rgb(0, 195, 80);
+$secondary_t2_light: rgb(105,255,147);
+$secondary_t2_light_hover: rgb(99, 240, 138);
+$secondary_t2_light_active: rgb(86, 209, 121);
+$secondary_t2_dark: rgb(0,186,49);
+$secondary_t2_dark_hover: rgb(0, 175, 46);
+$secondary_t2_dark_active: rgb(0, 153, 40);
+$secondary_t2_text: rgb(0,0,0,1);
+
+// Additional action colors
+$surface: rgb(255,255,255);
+$error: rgb(244,67,54);
+$warning: rgb(255,152,0);
+$info: rgb(33,150,243);
+$success: rgb(76,175,80);
