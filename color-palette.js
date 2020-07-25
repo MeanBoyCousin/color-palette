@@ -29,13 +29,24 @@ inquirer
             message:
                 'Would you like to generate appropriate pseudo-class colors for hover and active states?',
             default: true
+        },
+        {
+            name: 'dir',
+            type: 'input',
+            message:
+                'Please enter the directory you would like the scss files in. e.g. ./src/styles'
         }
+        // Question to add user directory for files.
     ])
     .then(answers => {
+        if (!fs.existsSync(answers.dir)) fs.mkdirSync(answers.dir)
+
         const variablesStream = fs.createWriteStream(
-            './demo/_colors_variables.scss'
+            `${answers.dir}/_colors_variables.scss`
         )
-        const mixinsStream = fs.createWriteStream('./demo/_colors_mixins.scss')
+        const mixinsStream = fs.createWriteStream(
+            `${answers.dir}/_colors_mixins.scss`
+        )
         const streams = [variablesStream, mixinsStream]
 
         // Primary
