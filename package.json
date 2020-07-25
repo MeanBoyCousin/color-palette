@@ -1,0 +1,32 @@
+{
+    "name": "color-palette",
+    "version": "1.0.0",
+    "description": "A color palette designer built from a single primary color.",
+    "main": "color-palette.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "node color-palette.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/MeanBoyCousin/color-palette.git"
+    },
+    "keywords": [
+        "color",
+        "palette",
+        "css",
+        "scss"
+    ],
+    "author": "Tim Dunphy",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/MeanBoyCousin/color-palette/issues"
+    },
+    "homepage": "https://github.com/MeanBoyCousin/color-palette#readme",
+    "dependencies": {
+        "chroma-js": "^2.1.0",
+        "color-blend": "^3.0.0",
+        "inquirer": "^7.3.3",
+        "tinycolor2": "^1.4.1"
+    }
+}

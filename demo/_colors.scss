@@ -1,0 +1,79 @@
+// l => Light
+// d => Dark
+// h => Hover
+// ac => Active
+$primary: rgb(98,0,238);
+$primary_h: rgb(107, 15, 239);
+$primary_ac: rgb(126, 46, 241);
+$primary_l: rgb(158,71,255);
+$primary_l_h: rgb(164, 82, 255);
+$primary_l_ac: rgb(175, 104, 255);
+$primary_d: rgb(4,0,186);
+$primary_d_h: rgb(19, 15, 190);
+$primary_d_ac: rgb(49, 46, 198);
+$primary_text: rgb(255,255,255,1);
+
+// c ==> Complimentary Color Harmony
+$secondary_c: rgb(140,238,0);
+$secondary_c_h: rgb(132, 224, 0);
+$secondary_c_ac: rgb(115, 195, 0);
+$secondary_c_l: rgb(195,255,84);
+$secondary_c_l_h: rgb(183, 240, 79);
+$secondary_c_l_ac: rgb(160, 209, 69);
+$secondary_c_d: rgb(84,187,0);
+$secondary_c_d_h: rgb(79, 176, 0);
+$secondary_c_d_ac: rgb(69, 153, 0);
+$secondary_c_text: rgb(0,0,0,1);
+
+// a ==> Analogous Color Harmony
+$secondary_a1: rgb(3,0,238);
+$secondary_a1_h: rgb(18, 15, 239);
+$secondary_a1_ac: rgb(48, 46, 241);
+$secondary_a1_l: rgb(109,63,255);
+$secondary_a1_l_h: rgb(118, 75, 255);
+$secondary_a1_l_ac: rgb(135, 98, 255);
+$secondary_a1_d: rgb(0,0,186);
+$secondary_a1_d_h: rgb(15, 15, 190);
+$secondary_a1_d_ac: rgb(46, 46, 198);
+$secondary_a1_text: rgb(255,255,255,1);
+
+$secondary_a2: rgb(193,0,238);
+$secondary_a2_h: rgb(197, 15, 239);
+$secondary_a2_ac: rgb(204, 46, 241);
+$secondary_a2_l: rgb(248,87,255);
+$secondary_a2_l_h: rgb(248, 97, 255);
+$secondary_a2_l_ac: rgb(249, 117, 255);
+$secondary_a2_d: rgb(139,0,186);
+$secondary_a2_d_h: rgb(146, 15, 190);
+$secondary_a2_d_ac: rgb(160, 46, 198);
+$secondary_a2_text: rgb(255,255,255,1);
+
+// t ==> Triadic Color Harmony
+$secondary_t1: rgb(238,98,0);
+$secondary_t1_h: rgb(224, 92, 0);
+$secondary_t1_ac: rgb(195, 80, 0);
+$secondary_t1_l: rgb(255,147,61);
+$secondary_t1_l_h: rgb(240, 138, 57);
+$secondary_t1_l_ac: rgb(209, 121, 50);
+$secondary_t1_d: rgb(180,49,0);
+$secondary_t1_d_h: rgb(169, 46, 0);
+$secondary_t1_d_ac: rgb(148, 40, 0);
+$secondary_t1_text: rgb(0,0,0,1);
+
+$secondary_t2: rgb(0,238,98);
+$secondary_t2_h: rgb(0, 224, 92);
+$secondary_t2_ac: rgb(0, 195, 80);
+$secondary_t2_l: rgb(105,255,147);
+$secondary_t2_l_h: rgb(99, 240, 138);
+$secondary_t2_l_ac: rgb(86, 209, 121);
+$secondary_t2_d: rgb(0,186,49);
+$secondary_t2_d_h: rgb(0, 175, 46);
+$secondary_t2_d_ac: rgb(0, 153, 40);
+$secondary_t2_text: rgb(0,0,0,1);
+
+// Additional action colors
+$surface: rgb(255,255,255);
+$error: rgb(244,67,54);
+$warning: rgb(255,152,0);
+$info: rgb(33,150,243);
+$success: rgb(76,175,80);
