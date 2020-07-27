@@ -5,9 +5,9 @@
     "main": "color-palette.js",
     "scripts": {
         "lint": "npx eslint *.js --fix",
-        "lintTests": "npx eslint tests/*.test.js --fix",
+        "lint-tests": "npx eslint tests/*.test.js --fix",
         "test": "jest",
-        "testCov": "jest --coverage",
+        "test-cov": "jest --coverage",
         "mutate": "stryker run",
         "build": "node color-palette.js"
     },
