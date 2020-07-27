@@ -5,7 +5,7 @@ const fs = require('fs')
 const { analogous, complimentary, triadic } = require('./helpers/colorSets')
 const relativeLuminance = require('./helpers/getLuminance')
 const getTextColor = require('./helpers/getTextColor')
-const buildColorSet = require('./helpers/buildColorSets')
+const { buildVariables, buildMixins } = require('./helpers/buildColorSets')
 
 inquirer
     .prompt([
@@ -53,85 +53,97 @@ inquirer
             relativeLuminance(...chroma(answers.userColor).rgb())
         )
 
-        buildColorSet(
-            ...streams,
+        const primaryParams = [
             'primary',
             answers.userColor,
             primaryTextColor,
             answers.pseudo
-        )
+        ]
+
+        variablesStream.write(buildVariables(...primaryParams))
+
+        mixinsStream.write(buildMixins(...primaryParams))
 
         // Secondaries
-        // Complimentary
-        const complimentaryColor = complimentary(answers.userColor)
-
-        const complimentaryTextColor = getTextColor(
-            relativeLuminance(...chroma(complimentaryColor).rgb())
-        )
-
-        // Analogous
-        const analogousSet = analogous(answers.userColor)
-
-        const analogousOneTextColor = getTextColor(
-            relativeLuminance(...chroma(analogousSet[1]).rgb())
-        )
-        const analogousTwoTextColor = getTextColor(
-            relativeLuminance(...chroma(analogousSet[5]).rgb())
-        )
-
-        // Triadic
-        const triadicSet = triadic(answers.userColor)
-
-        const triadicOneTextColor = getTextColor(
-            relativeLuminance(...chroma(triadicSet[1]).rgb())
-        )
-        const triadicTwoTextColor = getTextColor(
-            relativeLuminance(...chroma(triadicSet[2]).rgb())
-        )
-
         answers.colorSets.map(set => {
             const key = set.charAt(0).toLowerCase()
             streams.map(stream => {
                 stream.write(`// ${key} ==> ${set} Color Harmony\n`)
             })
             if (set === 'Complimentary') {
-                buildColorSet(
-                    ...streams,
+                // Complimentary
+                const complimentaryColor = complimentary(answers.userColor)
+                const complimentaryTextColor = getTextColor(
+                    relativeLuminance(...chroma(complimentaryColor).rgb())
+                )
+
+                const scParams = [
                     'secondary_c',
                     complimentaryColor,
                     complimentaryTextColor,
                     answers.pseudo
-                )
+                ]
+
+                variablesStream.write(buildVariables(...scParams))
+                mixinsStream.write(buildMixins(...scParams))
             } else if (set === 'Analogous') {
-                buildColorSet(
-                    ...streams,
-                    'secondary_a1',
-                    analogousSet[1],
-                    analogousOneTextColor,
-                    answers.pseudo
+                // Analogous
+                const analogousSet = analogous(answers.userColor)
+                const analogousOneTextColor = getTextColor(
+                    relativeLuminance(...chroma(analogousSet[1]).rgb())
                 )
-                buildColorSet(
-                    ...streams,
-                    'secondary_a2',
-                    analogousSet[5],
-                    analogousTwoTextColor,
-                    answers.pseudo
+                const analogousTwoTextColor = getTextColor(
+                    relativeLuminance(...chroma(analogousSet[5]).rgb())
                 )
+
+                const aParams = [
+                    [
+                        'secondary_a1',
+                        analogousSet[1],
+                        analogousOneTextColor,
+                        answers.pseudo
+                    ],
+                    [
+                        'secondary_a2',
+                        analogousSet[5],
+                        analogousTwoTextColor,
+                        answers.pseudo
+                    ]
+                ]
+
+                aParams.forEach(params => {
+                    variablesStream.write(buildVariables(...params))
+                    mixinsStream.write(buildMixins(...params))
+                })
             } else if (set === 'Triadic') {
-                buildColorSet(
-                    ...streams,
-                    'secondary_t1',
-                    triadicSet[1],
-                    triadicOneTextColor,
-                    answers.pseudo
+                // Triadic
+                const triadicSet = triadic(answers.userColor)
+                const triadicOneTextColor = getTextColor(
+                    relativeLuminance(...chroma(triadicSet[1]).rgb())
                 )
-                buildColorSet(
-                    ...streams,
-                    'secondary_t2',
-                    triadicSet[2],
-                    triadicTwoTextColor,
-                    answers.pseudo
+                const triadicTwoTextColor = getTextColor(
+                    relativeLuminance(...chroma(triadicSet[2]).rgb())
                 )
+
+                const tParams = [
+                    [
+                        'secondary_t1',
+                        triadicSet[1],
+                        triadicOneTextColor,
+                        answers.pseudo
+                    ],
+                    [
+                        'secondary_t2',
+                        triadicSet[2],
+                        triadicTwoTextColor,
+                        answers.pseudo
+                    ]
+                ]
+
+                tParams.forEach(params => {
+                    variablesStream.write(buildVariables(...params))
+                    mixinsStream.write(buildMixins(...params))
+                })
             }
         })
 
