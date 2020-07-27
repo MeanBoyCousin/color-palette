@@ -11,4 +11,7 @@ const blendColors = (primary, text) => {
     return `rgb(${blended.r}, ${blended.g}, ${blended.b})`
 }
 
-module.exports = blendColors
+module.exports = {
+    blendColors: blendColors,
+    blendFormat: blendFormat
+}

@@ -6,14 +6,14 @@ const analogousSet = primary => {
         .map(color => color.toHexString())
 }
 
+const complimentary = primary => {
+    return tinycolor(primary).complement().toRgbString()
+}
+
 const triadicSet = primary => {
     return tinycolor(primary)
         .triad()
         .map(color => color.toHexString())
-}
-
-const complimentary = primary => {
-    return tinycolor(primary).complement().toRgbString()
 }
 
 module.exports = {

@@ -2,7 +2,7 @@ const inquirer = require('inquirer')
 const chroma = require('chroma-js')
 const fs = require('fs')
 
-const colorSets = require('./helpers/colorSets')
+const { analogous, complimentary, triadic } = require('./helpers/colorSets')
 const relativeLuminance = require('./helpers/getLuminance')
 const getTextColor = require('./helpers/getTextColor')
 const buildColorSet = require('./helpers/buildColorSets')
@@ -57,19 +57,20 @@ inquirer
             ...streams,
             'primary',
             answers.userColor,
-            primaryTextColor
+            primaryTextColor,
+            answers.pseudo
         )
 
         // Secondaries
         // Complimentary
-        const complimentary = colorSets.complimentary(answers.userColor)
+        const complimentaryColor = complimentary(answers.userColor)
 
         const complimentaryTextColor = getTextColor(
-            relativeLuminance(...chroma(complimentary).rgb())
+            relativeLuminance(...chroma(complimentaryColor).rgb())
         )
 
         // Analogous
-        const analogousSet = colorSets.analogous(answers.userColor)
+        const analogousSet = analogous(answers.userColor)
 
         const analogousOneTextColor = getTextColor(
             relativeLuminance(...chroma(analogousSet[1]).rgb())
@@ -79,7 +80,7 @@ inquirer
         )
 
         // Triadic
-        const triadicSet = colorSets.triadic(answers.userColor)
+        const triadicSet = triadic(answers.userColor)
 
         const triadicOneTextColor = getTextColor(
             relativeLuminance(...chroma(triadicSet[1]).rgb())
@@ -97,51 +98,50 @@ inquirer
                 buildColorSet(
                     ...streams,
                     'secondary_c',
-                    complimentary,
-                    complimentaryTextColor
+                    complimentaryColor,
+                    complimentaryTextColor,
+                    answers.pseudo
                 )
             } else if (set === 'Analogous') {
                 buildColorSet(
                     ...streams,
                     'secondary_a1',
                     analogousSet[1],
-                    analogousOneTextColor
+                    analogousOneTextColor,
+                    answers.pseudo
                 )
                 buildColorSet(
                     ...streams,
                     'secondary_a2',
                     analogousSet[5],
-                    analogousTwoTextColor
+                    analogousTwoTextColor,
+                    answers.pseudo
                 )
             } else if (set === 'Triadic') {
                 buildColorSet(
                     ...streams,
                     'secondary_t1',
                     triadicSet[1],
-                    triadicOneTextColor
+                    triadicOneTextColor,
+                    answers.pseudo
                 )
                 buildColorSet(
                     ...streams,
                     'secondary_t2',
                     triadicSet[2],
-                    triadicTwoTextColor
+                    triadicTwoTextColor,
+                    answers.pseudo
                 )
             }
         })
 
         // Additional
-        if (answers.pseudo) {
-            variablesStream.write('// Additional action colors\n')
-            variablesStream.write(`$surface: rgb(${chroma('#fff').rgb()});\n`)
-            variablesStream.write(`$error: rgb(${chroma('#f44336').rgb()});\n`)
-            variablesStream.write(
-                `$warning: rgb(${chroma('#ff9800').rgb()});\n`
-            )
-            variablesStream.write(`$info: rgb(${chroma('#2196f3').rgb()});\n`)
-            variablesStream.write(
-                `$success: rgb(${chroma('#4caf50').rgb()});\n`
-            )
-        }
+        variablesStream.write('// Additional action colors\n')
+        variablesStream.write(`$surface: rgb(${chroma('#fff').rgb()});\n`)
+        variablesStream.write(`$error: rgb(${chroma('#f44336').rgb()});\n`)
+        variablesStream.write(`$warning: rgb(${chroma('#ff9800').rgb()});\n`)
+        variablesStream.write(`$info: rgb(${chroma('#2196f3').rgb()});\n`)
+        variablesStream.write(`$success: rgb(${chroma('#4caf50').rgb()});\n`)
     })
     .catch(error => {
         if (error.isTtyError) {
