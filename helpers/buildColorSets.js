@@ -4,7 +4,7 @@ const dedent = require('dedent')
 const { blendColors } = require('./blendColors')
 
 const buildVariables = (name, color, textColor, pseudo) => {
-    const main = `$${name}: rgb(${chroma(color).rgb()});\n`
+    const main = `$${name}: rgb(${chroma(color).rgb().join(', ')});\n`
     const mainHover = `$${name}_hover: ${blendColors(
         [chroma(color).rgb(), 1],
         [textColor, 0.06]
@@ -13,7 +13,10 @@ const buildVariables = (name, color, textColor, pseudo) => {
         [chroma(color).rgb(), 1],
         [textColor, 0.18]
     )};\n`
-    const light = `$${name}_light: rgb(${chroma(color).brighten().rgb()});\n`
+    const light = `$${name}_light: rgb(${chroma(color)
+        .brighten()
+        .rgb()
+        .join(', ')});\n`
     const lightHover = `$${name}_light_hover: ${blendColors(
         [chroma(color).brighten().rgb(), 1],
         [textColor, 0.06]
@@ -22,7 +25,10 @@ const buildVariables = (name, color, textColor, pseudo) => {
         [chroma(color).brighten().rgb(), 1],
         [textColor, 0.18]
     )};\n`
-    const dark = `$${name}_dark: rgb(${chroma(color).darken().rgb()});\n`
+    const dark = `$${name}_dark: rgb(${chroma(color)
+        .darken()
+        .rgb()
+        .join(', ')});\n`
     const darkHover = `$${name}_dark_hover: ${blendColors(
         [chroma(color).darken().rgb(), 1],
         [textColor, 0.06]
@@ -31,7 +37,9 @@ const buildVariables = (name, color, textColor, pseudo) => {
         [chroma(color).darken().rgb(), 1],
         [textColor, 0.18]
     )};\n`
-    const text = `$${name}_text: rgb(${textColor});\n\n`
+    const text = `$${name}_text: rgb(${chroma(textColor)
+        .rgb()
+        .join(', ')});\n\n`
 
     if (pseudo) {
         return [
@@ -54,8 +62,8 @@ const buildVariables = (name, color, textColor, pseudo) => {
 const buildMixins = (name, color, textColor, pseudo) => {
     const main = dedent`
         @mixin ${name} {
-            background-color: rgb(${chroma(color).rgb()});
-            color: rgb(${textColor});
+            background-color: rgb(${chroma(color).rgb().join(', ')});
+            color: rgb(${chroma(textColor).rgb().join(', ')});
             &:hover {
                 background-color: ${blendColors(
                     [chroma(color).rgb(), 1],
@@ -71,8 +79,8 @@ const buildMixins = (name, color, textColor, pseudo) => {
         }
 
         @mixin ${name}_light {
-            background-color: rgb(${chroma(color).brighten().rgb()});
-            color: rgb(${textColor});
+            background-color: rgb(${chroma(color).brighten().rgb().join(', ')});
+            color: rgb(${chroma(textColor).rgb().join(', ')});
             &:hover {
                 background-color: ${blendColors(
                     [chroma(color).brighten().rgb(), 1],
@@ -88,8 +96,8 @@ const buildMixins = (name, color, textColor, pseudo) => {
         }
         
         @mixin ${name}_dark {
-            background-color: rgb(${chroma(color).darken().rgb()});
-            color: rgb(${textColor});
+            background-color: rgb(${chroma(color).darken().rgb().join(', ')});
+            color: rgb(${chroma(textColor).rgb().join(', ')});
             &:hover {
                 background-color: ${blendColors(
                     [chroma(color).darken().rgb(), 1],
@@ -106,18 +114,18 @@ const buildMixins = (name, color, textColor, pseudo) => {
 
     const mainNoPseudo = dedent`
         @mixin ${name} {
-            background-color: rgb(${chroma(color).rgb()});
-            color: rgb(${textColor});
+            background-color: rgb(${chroma(color).rgb().join(', ')});
+            color: rgb(${chroma(textColor).rgb().join(', ')});
         }
 
         @mixin ${name}_light {
-            background-color: rgb(${chroma(color).brighten().rgb()});
-            color: rgb(${textColor});
+            background-color: rgb(${chroma(color).brighten().rgb().join(', ')});
+            color: rgb(${chroma(textColor).rgb().join(', ')});
         }
         
         @mixin ${name}_dark {
-            background-color: rgb(${chroma(color).darken().rgb()});
-            color: rgb(${textColor});
+            background-color: rgb(${chroma(color).darken().rgb().join(', ')});
+            color: rgb(${chroma(textColor).rgb().join(', ')});
         }\n\n`
 
     if (pseudo) {
