@@ -1,5 +1,6 @@
 const inquirer = require('inquirer')
 const chroma = require('chroma-js')
+const chalk = require('chalk')
 
 const dirExists = require('./helpers/dirExists')
 const createStream = require('./helpers/createStream')
@@ -35,7 +36,7 @@ inquirer
             name: 'dir',
             type: 'input',
             message:
-                'Please enter the directory you would like the scss files in. e.g. ./src/styles'
+                'Please enter the directory you would like the scss files placed in.'
         }
     ])
     .then(answers => {
@@ -153,6 +154,13 @@ inquirer
         variablesStream.write(`$warning: rgb(${chroma('#ff9800').rgb()});\n`)
         variablesStream.write(`$info: rgb(${chroma('#2196f3').rgb()});\n`)
         variablesStream.write(`$success: rgb(${chroma('#4caf50').rgb()});\n`)
+
+        //Log Message
+        console.log(
+            chalk.greenBright(
+                `Created '_colors_mixins.scss' & '_colors_variables.scss' at '${answers.dir}'.`
+            )
+        )
     })
     .catch(error => {
         if (error.isTtyError) {

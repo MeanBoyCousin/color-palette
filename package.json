@@ -49,6 +49,7 @@
     },
     "homepage": "https://github.com/MeanBoyCousin/color-palette#readme",
     "dependencies": {
+        "chalk": "^4.1.0",
         "chroma-js": "^2.1.0",
         "color-blend": "^3.0.0",
         "dedent": "^0.7.0",
