@@ -2,6 +2,7 @@ const inquirer = require('inquirer')
 const chroma = require('chroma-js')
 const fs = require('fs')
 
+const dirExists = require('./helpers/dirExists')
 const { analogous, complimentary, triadic } = require('./helpers/colorSets')
 const relativeLuminance = require('./helpers/getLuminance')
 const getTextColor = require('./helpers/getTextColor')
@@ -38,7 +39,7 @@ inquirer
         }
     ])
     .then(answers => {
-        if (!fs.existsSync(answers.dir)) fs.mkdirSync(answers.dir)
+        dirExists(answers.dir)
 
         const variablesStream = fs.createWriteStream(
             `${answers.dir}/_colors_variables.scss`
