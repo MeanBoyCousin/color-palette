@@ -3,6 +3,7 @@ const chroma = require('chroma-js')
 const fs = require('fs')
 
 const dirExists = require('./helpers/dirExists')
+const createStream = require('./helpers/createStream')
 const { analogous, complimentary, triadic } = require('./helpers/colorSets')
 const relativeLuminance = require('./helpers/getLuminance')
 const getTextColor = require('./helpers/getTextColor')
@@ -41,12 +42,10 @@ inquirer
     .then(answers => {
         dirExists(answers.dir)
 
-        const variablesStream = fs.createWriteStream(
+        const variablesStream = createStream(
             `${answers.dir}/_colors_variables.scss`
         )
-        const mixinsStream = fs.createWriteStream(
-            `${answers.dir}/_colors_mixins.scss`
-        )
+        const mixinsStream = createStream(`${answers.dir}/_colors_mixins.scss`)
         const streams = [variablesStream, mixinsStream]
 
         // Primary

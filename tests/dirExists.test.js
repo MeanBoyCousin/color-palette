@@ -1,10 +1,13 @@
 const fs = require('fs')
+const mock = require('mock-fs')
 
 const dirExists = require('../helpers/dirExists')
 
+mock({})
+
 describe('Check user selected dir is created if it does not exist', () => {
     afterAll(() => {
-        fs.rmdirSync('./tests/temp')
+        mock.restore()
     })
 
     test('should return [false, true] if dir did not exist and was then created', () => {
