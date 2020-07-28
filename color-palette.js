@@ -1,6 +1,5 @@
 const inquirer = require('inquirer')
 const chroma = require('chroma-js')
-const fs = require('fs')
 
 const dirExists = require('./helpers/dirExists')
 const createStream = require('./helpers/createStream')
