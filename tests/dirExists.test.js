@@ -16,8 +16,7 @@ describe('Check user selected dir is created if it does not exist', () => {
         expect([noDir, fs.existsSync('./tests/temp')]).toEqual([false, true])
     })
 
-    test('should return true if dir already exists', () => {
-        dirExists('./tests/temp')
-        expect(fs.existsSync('./tests/temp')).toBeTruthy()
+    test('should return false if dir already exists', () => {
+        expect(dirExists('./tests/temp')).toBeFalsy()
     })
 })

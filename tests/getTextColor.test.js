@@ -41,6 +41,8 @@ describe('Check text color calculations', () => {
             getTextColor(relativeLuminance(...chroma('hsl(0, 100%, 0%)').rgb()))
         ).toEqual([255, 255, 255])
 
+        expect(getTextColor(0.1791)).toEqual([0, 0, 0]) //Equality check.
+
         expect(Array.isArray(getTextColor('black'))).toEqual(true)
         expect(getTextColor('black').length).toEqual(3)
     })
