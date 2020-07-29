@@ -157,9 +157,8 @@ inquirer
 
         //Log Message
         console.log(
-            chalk.greenBright(
-                `Created '_colors_mixins.scss' & '_colors_variables.scss' at '${answers.dir}'.`
-            )
+            '\x1b[32m%s\x1b[0m',
+            `Created '_colors_mixins.scss' & '_colors_variables.scss' at '${answers.dir}'.`
         )
     })
     .catch(error => {
