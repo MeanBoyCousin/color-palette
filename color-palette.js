@@ -90,22 +90,22 @@ inquirer
                 // Analogous
                 const analogousSet = analogous(answers.userColor)
                 const analogousOneTextColor = getTextColor(
-                    relativeLuminance(...chroma(analogousSet[1]).rgb())
+                    relativeLuminance(...chroma(analogousSet[0]).rgb())
                 )
                 const analogousTwoTextColor = getTextColor(
-                    relativeLuminance(...chroma(analogousSet[5]).rgb())
+                    relativeLuminance(...chroma(analogousSet[1]).rgb())
                 )
 
                 const aParams = [
                     [
                         'secondary_a1',
-                        analogousSet[1],
+                        analogousSet[0],
                         analogousOneTextColor,
                         answers.pseudo
                     ],
                     [
                         'secondary_a2',
-                        analogousSet[5],
+                        analogousSet[1],
                         analogousTwoTextColor,
                         answers.pseudo
                     ]
@@ -119,22 +119,22 @@ inquirer
                 // Triadic
                 const triadicSet = triadic(answers.userColor)
                 const triadicOneTextColor = getTextColor(
-                    relativeLuminance(...chroma(triadicSet[1]).rgb())
+                    relativeLuminance(...chroma(triadicSet[0]).rgb())
                 )
                 const triadicTwoTextColor = getTextColor(
-                    relativeLuminance(...chroma(triadicSet[2]).rgb())
+                    relativeLuminance(...chroma(triadicSet[1]).rgb())
                 )
 
                 const tParams = [
                     [
                         'secondary_t1',
-                        triadicSet[1],
+                        triadicSet[0],
                         triadicOneTextColor,
                         answers.pseudo
                     ],
                     [
                         'secondary_t2',
-                        triadicSet[2],
+                        triadicSet[1],
                         triadicTwoTextColor,
                         answers.pseudo
                     ]

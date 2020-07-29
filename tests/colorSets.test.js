@@ -2,23 +2,9 @@ const { analogous, complimentary, triadic } = require('../helpers/colorSets')
 
 describe('Check color set functions', () => {
     test('should return correct analogous color harmonies', () => {
-        const analogousRed = [
-            '#ff0000',
-            '#ff0066',
-            '#ff0033',
-            '#ff0000',
-            '#ff3300',
-            '#ff6600'
-        ]
+        const analogousRed = ['rgb(255, 102, 0)', 'rgb(255, 0, 102)']
 
-        const analogousBlue = [
-            '#0000ff',
-            '#0066ff',
-            '#0033ff',
-            '#0000ff',
-            '#3300ff',
-            '#6600ff'
-        ]
+        const analogousBlue = ['rgb(102, 0, 255)', 'rgb(0, 102, 255)']
 
         expect(analogous('red')).toEqual(analogousRed)
         expect(analogous('#f00')).toEqual(analogousRed)
@@ -33,7 +19,7 @@ describe('Check color set functions', () => {
         expect(analogous('hsl(240, 100%, 50%)')).toEqual(analogousBlue)
 
         expect(Array.isArray(analogous('blue'))).toEqual(true)
-        expect(analogous('blue').length).toEqual(6)
+        expect(analogous('blue').length).toEqual(2)
     })
 
     test('should return correct complimentary color harmonies', () => {
@@ -56,9 +42,9 @@ describe('Check color set functions', () => {
     })
 
     test('should return correct triadic color harmonies', () => {
-        const triadicRed = ['#ff0000', '#00ff00', '#0000ff']
+        const triadicRed = ['rgb(0, 255, 0)', 'rgb(0, 0, 255)']
 
-        const triadicBlue = ['#0000ff', '#ff0000', '#00ff00']
+        const triadicBlue = ['rgb(255, 0, 0)', 'rgb(0, 255, 0)']
 
         expect(triadic('red')).toEqual(triadicRed)
         expect(triadic('#f00')).toEqual(triadicRed)
@@ -73,6 +59,6 @@ describe('Check color set functions', () => {
         expect(triadic('hsl(240, 100%, 50%)')).toEqual(triadicBlue)
 
         expect(Array.isArray(triadic('blue'))).toEqual(true)
-        expect(triadic('blue').length).toEqual(3)
+        expect(triadic('blue').length).toEqual(2)
     })
 })

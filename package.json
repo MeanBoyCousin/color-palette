@@ -52,8 +52,7 @@
         "chroma-js": "^2.1.0",
         "color-blend": "^3.0.0",
         "dedent": "^0.7.0",
-        "inquirer": "^7.3.3",
-        "tinycolor2": "^1.4.1"
+        "inquirer": "^7.3.3"
     },
     "devDependencies": {
         "@stryker-mutator/core": "^3.3.1",
