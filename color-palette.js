@@ -1,7 +1,7 @@
 const inquirer = require('inquirer')
 const chroma = require('chroma-js')
-const chalk = require('chalk')
 
+const filterPath = require('./helpers/findAllPaths')
 const dirExists = require('./helpers/dirExists')
 const createStream = require('./helpers/createStream')
 const { analogous, complimentary, triadic } = require('./helpers/colorSets')
@@ -34,9 +34,10 @@ inquirer
         },
         {
             name: 'dir',
-            type: 'input',
+            type: 'list',
             message:
-                'Please enter the directory you would like the scss files placed in.'
+                'Please select the directory you would like the scss files placed in.',
+            choices: filterPath('.')
         }
     ])
     .then(answers => {

@@ -1,174 +1,40 @@
 @mixin primary {
-    background-color: rgb(255,0,255);
-    color: rgb(0,0,0,1);
+    background-color: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
     &:hover {
-        background-color: rgb(240, 0, 240);
+        background-color: rgb(240, 0, 0);
     }
     &:active {
-        background-color: rgb(209, 0, 209);
+        background-color: rgb(209, 0, 0);
     }
 }
 
 @mixin primary_light {
-    background-color: rgb(255,99,255);
-    color: rgb(0,0,0,1);
+    background-color: rgb(255, 90, 54);
+    color: rgb(0, 0, 0);
     &:hover {
-        background-color: rgb(240, 93, 240);
+        background-color: rgb(240, 85, 51);
     }
     &:active {
-        background-color: rgb(209, 81, 209);
+        background-color: rgb(209, 74, 44);
     }
 }
 
 @mixin primary_dark {
-    background-color: rgb(199,0,203);
-    color: rgb(0,0,0,1);
+    background-color: rgb(194, 0, 0);
+    color: rgb(0, 0, 0);
     &:hover {
-        background-color: rgb(187, 0, 191);
+        background-color: rgb(182, 0, 0);
     }
     &:active {
-        background-color: rgb(163, 0, 166);
+        background-color: rgb(159, 0, 0);
     }
 }
 
 // c ==> Complimentary Color Harmony
 @mixin secondary_c {
-    background-color: rgb(0,255,0);
-    color: rgb(0,0,0,1);
-    &:hover {
-        background-color: rgb(0, 240, 0);
-    }
-    &:active {
-        background-color: rgb(0, 209, 0);
-    }
-}
-
-@mixin secondary_c_light {
-    background-color: rgb(112,255,86);
-    color: rgb(0,0,0,1);
-    &:hover {
-        background-color: rgb(105, 240, 81);
-    }
-    &:active {
-        background-color: rgb(92, 209, 71);
-    }
-}
-
-@mixin secondary_c_dark {
-    background-color: rgb(0,202,0);
-    color: rgb(0,0,0,1);
-    &:hover {
-        background-color: rgb(0, 190, 0);
-    }
-    &:active {
-        background-color: rgb(0, 166, 0);
-    }
-}
-
-// a ==> Analogous Color Harmony
-@mixin secondary_a1 {
-    background-color: rgb(153,0,255);
-    color: rgb(255,255,255,1);
-    &:hover {
-        background-color: rgb(159, 15, 255);
-    }
-    &:active {
-        background-color: rgb(171, 46, 255);
-    }
-}
-
-@mixin secondary_a1_light {
-    background-color: rgb(209,81,255);
-    color: rgb(255,255,255,1);
-    &:hover {
-        background-color: rgb(212, 91, 255);
-    }
-    &:active {
-        background-color: rgb(217, 112, 255);
-    }
-}
-
-@mixin secondary_a1_dark {
-    background-color: rgb(95,0,202);
-    color: rgb(255,255,255,1);
-    &:hover {
-        background-color: rgb(105, 15, 205);
-    }
-    &:active {
-        background-color: rgb(124, 46, 212);
-    }
-}
-
-@mixin secondary_a2 {
-    background-color: rgb(255,0,153);
-    color: rgb(0,0,0,1);
-    &:hover {
-        background-color: rgb(240, 0, 144);
-    }
-    &:active {
-        background-color: rgb(209, 0, 125);
-    }
-}
-
-@mixin secondary_a2_light {
-    background-color: rgb(255,94,202);
-    color: rgb(0,0,0,1);
-    &:hover {
-        background-color: rgb(240, 88, 190);
-    }
-    &:active {
-        background-color: rgb(209, 77, 166);
-    }
-}
-
-@mixin secondary_a2_dark {
-    background-color: rgb(198,0,107);
-    color: rgb(0,0,0,1);
-    &:hover {
-        background-color: rgb(186, 0, 101);
-    }
-    &:active {
-        background-color: rgb(162, 0, 88);
-    }
-}
-
-// t ==> Triadic Color Harmony
-@mixin secondary_t1 {
-    background-color: rgb(255,255,0);
-    color: rgb(0,0,0,1);
-    &:hover {
-        background-color: rgb(240, 240, 0);
-    }
-    &:active {
-        background-color: rgb(209, 209, 0);
-    }
-}
-
-@mixin secondary_t1_light {
-    background-color: rgb(255,255,90);
-    color: rgb(0,0,0,1);
-    &:hover {
-        background-color: rgb(240, 240, 85);
-    }
-    &:active {
-        background-color: rgb(209, 209, 74);
-    }
-}
-
-@mixin secondary_t1_dark {
-    background-color: rgb(199,204,0);
-    color: rgb(0,0,0,1);
-    &:hover {
-        background-color: rgb(187, 192, 0);
-    }
-    &:active {
-        background-color: rgb(163, 167, 0);
-    }
-}
-
-@mixin secondary_t2 {
-    background-color: rgb(0,255,255);
-    color: rgb(0,0,0,1);
+    background-color: rgb(0, 255, 255);
+    color: rgb(0, 0, 0);
     &:hover {
         background-color: rgb(0, 240, 240);
     }
@@ -177,9 +43,9 @@
     }
 }
 
-@mixin secondary_t2_light {
-    background-color: rgb(114,255,255);
-    color: rgb(0,0,0,1);
+@mixin secondary_c_light {
+    background-color: rgb(114, 255, 255);
+    color: rgb(0, 0, 0);
     &:hover {
         background-color: rgb(107, 240, 240);
     }
@@ -188,14 +54,148 @@
     }
 }
 
-@mixin secondary_t2_dark {
-    background-color: rgb(0,203,204);
-    color: rgb(0,0,0,1);
+@mixin secondary_c_dark {
+    background-color: rgb(0, 203, 204);
+    color: rgb(0, 0, 0);
     &:hover {
         background-color: rgb(0, 191, 192);
     }
     &:active {
         background-color: rgb(0, 166, 167);
+    }
+}
+
+// a ==> Analogous Color Harmony
+@mixin secondary_a1 {
+    background-color: rgb(255, 102, 0);
+    color: rgb(0, 0, 0);
+    &:hover {
+        background-color: rgb(240, 96, 0);
+    }
+    &:active {
+        background-color: rgb(209, 84, 0);
+    }
+}
+
+@mixin secondary_a1_light {
+    background-color: rgb(255, 152, 63);
+    color: rgb(0, 0, 0);
+    &:hover {
+        background-color: rgb(240, 143, 59);
+    }
+    &:active {
+        background-color: rgb(209, 125, 52);
+    }
+}
+
+@mixin secondary_a1_dark {
+    background-color: rgb(196, 51, 0);
+    color: rgb(0, 0, 0);
+    &:hover {
+        background-color: rgb(184, 48, 0);
+    }
+    &:active {
+        background-color: rgb(161, 42, 0);
+    }
+}
+
+@mixin secondary_a2 {
+    background-color: rgb(255, 0, 102);
+    color: rgb(0, 0, 0);
+    &:hover {
+        background-color: rgb(240, 0, 96);
+    }
+    &:active {
+        background-color: rgb(209, 0, 84);
+    }
+}
+
+@mixin secondary_a2_light {
+    background-color: rgb(255, 92, 147);
+    color: rgb(0, 0, 0);
+    &:hover {
+        background-color: rgb(240, 86, 138);
+    }
+    &:active {
+        background-color: rgb(209, 75, 121);
+    }
+}
+
+@mixin secondary_a2_dark {
+    background-color: rgb(197, 0, 60);
+    color: rgb(0, 0, 0);
+    &:hover {
+        background-color: rgb(185, 0, 56);
+    }
+    &:active {
+        background-color: rgb(162, 0, 49);
+    }
+}
+
+// t ==> Triadic Color Harmony
+@mixin secondary_t1 {
+    background-color: rgb(0, 255, 0);
+    color: rgb(0, 0, 0);
+    &:hover {
+        background-color: rgb(0, 240, 0);
+    }
+    &:active {
+        background-color: rgb(0, 209, 0);
+    }
+}
+
+@mixin secondary_t1_light {
+    background-color: rgb(112, 255, 86);
+    color: rgb(0, 0, 0);
+    &:hover {
+        background-color: rgb(105, 240, 81);
+    }
+    &:active {
+        background-color: rgb(92, 209, 71);
+    }
+}
+
+@mixin secondary_t1_dark {
+    background-color: rgb(0, 202, 0);
+    color: rgb(0, 0, 0);
+    &:hover {
+        background-color: rgb(0, 190, 0);
+    }
+    &:active {
+        background-color: rgb(0, 166, 0);
+    }
+}
+
+@mixin secondary_t2 {
+    background-color: rgb(0, 0, 255);
+    color: rgb(255, 255, 255);
+    &:hover {
+        background-color: rgb(15, 15, 255);
+    }
+    &:active {
+        background-color: rgb(46, 46, 255);
+    }
+}
+
+@mixin secondary_t2_light {
+    background-color: rgb(113, 66, 255);
+    color: rgb(255, 255, 255);
+    &:hover {
+        background-color: rgb(122, 77, 255);
+    }
+    &:active {
+        background-color: rgb(139, 100, 255);
+    }
+}
+
+@mixin secondary_t2_dark {
+    background-color: rgb(0, 0, 202);
+    color: rgb(255, 255, 255);
+    &:hover {
+        background-color: rgb(15, 15, 205);
+    }
+    &:active {
+        background-color: rgb(46, 46, 212);
     }
 }
 
