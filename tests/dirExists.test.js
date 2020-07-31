@@ -17,6 +17,6 @@ describe('Check user selected dir is created if it does not exist', () => {
     })
 
     test('should return false if dir already exists', () => {
-        expect(dirExists('./tests/temp')).toBeFalsy()
+        expect(dirExists('./tests/temp')).toEqual(false)
     })
 })
