@@ -1,9 +1,9 @@
 {
     "name": "color-palette-cli",
-    "version": "1.0.0",
-    "main": "./dist/color-palette.js",
+    "version": "1.0.1",
+    "main": "dist/color-palette.js",
     "bin": {
-        "color-palette": "./dist/color-palette.js"
+        "color-palette": "dist/color-palette.js"
     },
     "description": "A color palette designer built from a single primary color.",
     "scripts": {
@@ -36,7 +36,7 @@
         }
     },
     "files": [
-        "./dist/color-palette.js"
+        "dist/color-palette.js"
     ],
     "repository": {
         "type": "git",
