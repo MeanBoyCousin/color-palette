@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const inquirer = require('inquirer')
 const listPaths = require('list-paths')
 const chroma = require('chroma-js')

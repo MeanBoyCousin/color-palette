@@ -1,19 +1,18 @@
 {
     "name": "color-palette",
     "version": "1.0.0",
+    "main": "./dist/color-palette.js",
     "bin": {
-        "color-palette": "./src/color-palette.js"
+        "color-palette": "./dist/color-palette.js"
     },
     "description": "A color palette designer built from a single primary color.",
-    "main": "src/color-palette.js",
     "scripts": {
         "lint": "npx eslint src/*.js --fix",
         "lint-tests": "npx eslint tests/*.test.js --fix",
         "test": "jest",
         "test-cov": "jest --coverage",
         "mutate": "stryker run",
-        "dev-build": "node src/color-palette.js",
-        "build": "",
+        "build": "webpack",
         "publish-dry-run": "npm publish --dry-run"
     },
     "eslintConfig": {
@@ -37,7 +36,7 @@
         }
     },
     "files": [
-        "src"
+        "./dist/color-palette.js"
     ],
     "repository": {
         "type": "git",
@@ -64,9 +63,13 @@
         "list-paths": "^1.0.1"
     },
     "devDependencies": {
+        "@babel/core": "^7.11.0",
+        "@babel/preset-env": "^7.11.0",
         "@stryker-mutator/core": "^3.3.1",
         "@stryker-mutator/javascript-mutator": "^3.3.1",
         "@stryker-mutator/jest-runner": "^3.3.1",
+        "babel-loader": "^8.1.0",
+        "core-js": "^3.6.5",
         "eslint": "^7.6.0",
         "eslint-config-standard": "^14.1.1",
         "eslint-plugin-import": "^2.22.0",
@@ -74,6 +77,9 @@
         "eslint-plugin-promise": "^4.2.1",
         "eslint-plugin-standard": "^4.0.1",
         "jest": "^26.2.2",
-        "mock-fs": "^4.12.0"
+        "mock-fs": "^4.12.0",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12",
+        "webpack-node-externals": "^2.5.0"
     }
 }
