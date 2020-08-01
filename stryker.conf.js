@@ -2,8 +2,8 @@
  * @type {import('@stryker-mutator/api/core').StrykerOptions}
  */
 module.exports = {
-    files: ['./tests/*.js', './helpers/*.js'],
-    mutate: ['./helpers/*.js'],
+    files: ['./tests/*.js', './src/helpers/*.js'],
+    mutate: ['./src/helpers/*.js'],
     mutator: 'javascript',
     packageManager: 'npm',
     reporters: ['html', 'progress', 'dashboard'],

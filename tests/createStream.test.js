@@ -1,7 +1,7 @@
 const fs = require('fs')
 const mock = require('mock-fs')
 
-const createStream = require('../helpers/createStream')
+const createStream = require('../src/helpers/createStream')
 
 mock({
     './tests/temp': {}

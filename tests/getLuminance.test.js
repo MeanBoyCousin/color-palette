@@ -1,4 +1,4 @@
-const relativeLuminance = require('../helpers/getLuminance')
+const relativeLuminance = require('../src/helpers/getLuminance')
 
 describe('Check luminance calculations', () => {
     const blue = [2, 20, 200]

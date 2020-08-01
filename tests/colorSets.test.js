@@ -1,4 +1,8 @@
-const { analogous, complimentary, triadic } = require('../helpers/colorSets')
+const {
+    analogous,
+    complimentary,
+    triadic
+} = require('../src/helpers/colorSets')
 
 describe('Check color set functions', () => {
     test('should return correct analogous color harmonies', () => {

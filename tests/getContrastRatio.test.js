@@ -1,4 +1,4 @@
-const contrastRatio = require('../helpers/getContrastRatio')
+const contrastRatio = require('../src/helpers/getContrastRatio')
 
 describe('Check contrast ratio calculations', () => {
     const white = 0

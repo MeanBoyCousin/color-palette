@@ -1,4 +1,4 @@
-const { blendFormat, blendColors } = require('../helpers/blendColors')
+const { blendFormat, blendColors } = require('../src/helpers/blendColors')
 
 describe('Check color blending functions', () => {
     test('should format a color into the correct object for blending', () => {

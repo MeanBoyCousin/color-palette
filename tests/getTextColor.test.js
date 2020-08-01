@@ -1,7 +1,7 @@
 const chroma = require('chroma-js')
 
-const getTextColor = require('../helpers/getTextColor')
-const relativeLuminance = require('../helpers/getLuminance')
+const getTextColor = require('../src/helpers/getTextColor')
+const relativeLuminance = require('../src/helpers/getLuminance')
 
 describe('Check text color calculations', () => {
     test('should return array with three values for use in an RGB color string', () => {

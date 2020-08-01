@@ -1,6 +1,6 @@
 const dedent = require('dedent')
 
-const { buildVariables, buildMixins } = require('../helpers/buildColorSets')
+const { buildVariables, buildMixins } = require('../src/helpers/buildColorSets')
 
 describe('Check color set builder function', () => {
     test('should generate correctly formatted variables & mixins in string format with hover and active pseudo classes', () => {

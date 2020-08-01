@@ -1,7 +1,7 @@
 const fs = require('fs')
 const mock = require('mock-fs')
 
-const dirExists = require('../helpers/dirExists')
+const dirExists = require('../src/helpers/dirExists')
 
 mock({})
 
