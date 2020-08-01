@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const inquirer = require('inquirer')
 const listPaths = require('list-paths')
 const chroma = require('chroma-js')
@@ -156,7 +158,7 @@ inquirer
         variablesStream.write(`$info: rgb(${chroma('#2196f3').rgb()});\n`)
         variablesStream.write(`$success: rgb(${chroma('#4caf50').rgb()});\n`)
 
-        //Log Message
+        // Log Message
         console.log(
             '\x1b[32m%s\x1b[0m',
             `Created '_colors_mixins.scss' & '_colors_variables.scss' at '${answers.dir}'.`
