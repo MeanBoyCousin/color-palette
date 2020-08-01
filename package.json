@@ -4,12 +4,12 @@
     "description": "A color palette designer built from a single primary color.",
     "main": "color-palette.js",
     "scripts": {
-        "lint": "npx eslint *.js --fix",
+        "lint": "npx eslint src/*.js --fix",
         "lint-tests": "npx eslint tests/*.test.js --fix",
         "test": "jest",
         "test-cov": "jest --coverage",
         "mutate": "stryker run",
-        "build": "node color-palette.js"
+        "dev-build": "node src/color-palette.js"
     },
     "eslintConfig": {
         "env": {
