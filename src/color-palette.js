@@ -14,6 +14,7 @@ inquirer
         {
             name: 'userColor',
             type: 'input',
+            default: '#0F4C81',
             message:
                 'Please enter your primary color. This can be a named, hex, rgb or hsl color.'
         },
