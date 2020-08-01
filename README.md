@@ -1,4 +1,4 @@
-# list-paths
+# Color Palette CLI
 
 [![Build Status](https://travis-ci.org/MeanBoyCousin/color-palette.svg?branch=master) ](https://travis-ci.org/MeanBoyCousin/color-palette) [![npm version](http://img.shields.io/npm/v/color-palette-cli.svg?style=flat)](https://npmjs.org/package/color-palette-cli 'View this project on npm') [![codecov](https://codecov.io/gh/MeanBoyCousin/color-palette/branch/master/graph/badge.svg)](https://codecov.io/gh/MeanBoyCousin/color-palette) [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FMeanBoyCousin%2Fcolor-palette%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/MeanBoyCousin/color-palette/master)
 
