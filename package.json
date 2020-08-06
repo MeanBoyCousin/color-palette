@@ -1,6 +1,6 @@
 {
     "name": "color-palette-cli",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "main": "dist/color-palette.js",
     "bin": {
         "color-palette": "dist/color-palette.js"

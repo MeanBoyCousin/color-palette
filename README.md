@@ -13,7 +13,7 @@
 Using npx is the easiest and quickest way to get started. The CLI will guide you through the process and create your SCSS files in seconds!
 
 ```console
-$ npx install color-palette-cli
+$ npx color-palette-cli
 ```
 
 ## CLI Options
