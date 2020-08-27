@@ -1,6 +1,5 @@
 node_modules
 dist
-src/color-palette.config.js
 # test coverage reports
 coverage
 reports
