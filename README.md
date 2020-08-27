@@ -26,6 +26,29 @@ $ npx color-palette-cli
 
 -   Source Directory - A list of possible source directories within your working directory will be presented. Please select one to define where you would like your SCSS files to live.
 
+## Config
+
+Color Palette CLI also has support for the use of a local config file to allow quick setup and storable user preferences.
+
+```js
+$ npx -p color-palette-cli color-palette-init  // Creates a color-palette.config.js file in the route working directory.
+```
+
+Once your config file is created, continue by calling the installation command via npx and you'll be all setup.
+
+## Config Setup
+
+Each of the fields in the config file equate to the CLI options above.
+
+```js
+module.exports = {
+    primary: '#0f4c81', //String
+    colorSets: ['Complimentary'], //String[]
+    pseudo: true, //Boolean
+    directory: './' //String
+}
+```
+
 ## Examples
 
 Please see the example [variables](./src/demo/_colors_variables.scss) and [mixins](./src/demo/_colors_mixins.scss) files to get an idea of what the generated code looks like. These examples include all three color schemes as well as pseudo-classes.

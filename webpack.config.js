@@ -8,10 +8,13 @@ module.exports = {
     optimization: {
         minimize: false
     },
-    entry: './src/color-palette.js',
+    entry: {
+        'color-palette': './src/color-palette.js',
+        'config-init': './src/config-init.js'
+    },
     output: {
         path: __dirname + '/dist',
-        filename: 'color-palette.js'
+        filename: '[name].js'
     },
     module: {
         rules: [
