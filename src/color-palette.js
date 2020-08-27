@@ -138,7 +138,7 @@ const buildFiles = answers => {
 if (fs.existsSync('./color-palette.config.js')) {
     console.log('\x1b[32m%s\x1b[0m', 'Config file detected.')
 
-    const answers = require('./color-palette.config.js')
+    const answers = require(`${process.cwd()}/color-palette.config.js`)
 
     buildFiles(answers)
 } else {

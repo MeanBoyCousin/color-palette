@@ -1,6 +1,6 @@
 {
     "name": "color-palette-cli",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "main": "dist/color-palette.js",
     "bin": {
         "color-palette": "dist/color-palette.js",
@@ -61,7 +61,8 @@
         "color-blend": "^3.0.0",
         "dedent": "^0.7.0",
         "inquirer": "^7.3.3",
-        "list-paths": "^1.0.1"
+        "list-paths": "^1.0.1",
+        "string-replace-loader": "^2.3.0"
     },
     "devDependencies": {
         "@babel/core": "^7.11.0",

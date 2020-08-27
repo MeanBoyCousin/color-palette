@@ -38,6 +38,16 @@ module.exports = {
                         ]
                     }
                 }
+            },
+            {
+                test: /\.js$/,
+                loader: 'string-replace-loader',
+                options: {
+                    search:
+                        'require(`${process.cwd()}/color-palette.config.js`)',
+                    replace:
+                        '__non_webpack_require__(`${process.cwd()}/color-palette.config.js`)'
+                }
             }
         ]
     },
@@ -46,6 +56,10 @@ module.exports = {
             banner: '#!/usr/bin/env node',
             raw: true,
             entryOnly: true
-        })
+        }),
+        new webpack.NormalModuleReplacementPlugin(
+            /^const answers = require\('.\/color-palette.config.js'\)$/g,
+            `const answers = __non_webpack_require__('./color-palette.config.js')`
+        )
     ]
 }

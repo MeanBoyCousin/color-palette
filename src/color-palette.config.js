@@ -1,5 +1,5 @@
 module.exports = {
-    primary: '#0f4c81',
+    primary: '#0F4C81',
     colorSets: ['Complimentary'],
     pseudo: true,
     directory: './'
