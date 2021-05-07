@@ -1,27 +1,27 @@
-const fs = require('fs')
-const mock = require('mock-fs')
+// const fs = require('fs')
+// const mock = require('mock-fs')
 
-const createStream = require('../src/helpers/createStream')
+// const createStream = require('../src/helpers/createStream')
 
-mock({
-    './tests/temp': {}
-})
+// mock({
+//     './tests/temp': {}
+// })
 
-describe('Check stream scss files are created in user specified path', () => {
-    beforeAll(() => {
-        createStream('./tests/temp/variables.scss')
-        createStream('./tests/temp/mixins.scss')
-    })
+// describe('Check stream scss files are created in user specified path', () => {
+//     beforeAll(() => {
+//         createStream('./tests/temp/variables.scss')
+//         createStream('./tests/temp/mixins.scss')
+//     })
 
-    afterAll(() => {
-        mock.restore()
-    })
+//     afterAll(() => {
+//         mock.restore()
+//     })
 
-    test('should return true is variables.scss has been created', () => {
-        expect(fs.existsSync('./tests/temp/variables.scss')).toBeTruthy()
-    })
+//     test('should return true is variables.scss has been created', () => {
+//         expect(fs.existsSync('./tests/temp/variables.scss')).toBeTruthy()
+//     })
 
-    test('should return true is mixins.scss has been created', () => {
-        expect(fs.existsSync('./tests/temp/mixins.scss')).toBeTruthy()
-    })
-})
+//     test('should return true is mixins.scss has been created', () => {
+//         expect(fs.existsSync('./tests/temp/mixins.scss')).toBeTruthy()
+//     })
+// })
